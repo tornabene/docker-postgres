@@ -49,8 +49,8 @@ USER postgres
 #       allows the RUN command to span multiple lines.
 RUN    /etc/init.d/postgresql start &&\
     psql --command "CREATE USER ntipa WITH SUPERUSER PASSWORD 'ntipa';" &&\
-    createdb -O ntipa-manager ntipa\
-    createdb -O ntipa-protocollo ntipa\
+    createdb -O ntipa-manager ntipa
+    createdb -O ntipa-protocollo ntipa
 
 # Adjust PostgreSQL configuration so that remote connections to the
 # database are possible. 

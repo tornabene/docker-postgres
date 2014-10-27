@@ -3,7 +3,7 @@
 ### To build:
 
 	Spostarsi nella directory e lanciare il comando
-    sudo docker build tornabene/docker-postgres .
+    sudo docker build -t tornabene/docker-postgres .
   
 ### To run:
 
