@@ -15,5 +15,12 @@
 Here we persistently save our data to the host machine's ``/opt/ntipa/postgres`` directory.
 
     mkdir -p /opt/ntipa/postgres
+    mkdir -p /opt/ntipa/postgres/etc
+    mkdir -p /opt/ntipa/postgres/log
+    mkdir -p /opt/ntipa/postgres/data
     chmod 777 /opt/ntipa/postgres
-    sudo docker run -d --name postgres.ntipa.it -p 5672:5672 -p 15672:15672 -p 9922:22  tornabene/docker-postgres -v /opt/ntipa/postgres:/var/lib/postgres/ntipa tornabene/docker-postgres
+    
+    sudo docker run --name postgres.ntipa.it -p 5432:5432 -p 9922:22 -v /opt/ntipa/postgres/etc:/etc/postgresql    -v /opt/ntipa/postgres/log:/var/log/postgresql     -v /opt/ntipa/postgres/data:/var/lib/postgresq   tornabene/docker-postgres 
+    
+    
+     
