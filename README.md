@@ -12,11 +12,7 @@
     
 ### To persist your data:
 
-Here we persistently save our data to the host machine's ``/opt/ntipa/postgres`` directory.
+Here we persistently save our data to the host machine's ``/opt/ntipa/postgresql_data`` directory.
 
-    sudo mkdir -p /opt/ntipa/postgres  /opt/ntipa/postgres/etc /opt/ntipa/postgres/log  /opt/ntipa/postgres/data /opt/ntipa/postgres
-    
-    sudo docker run --name postgres.ntipa.it -p 5432:5432 -p 9922:22 -v /opt/ntipa/postgres/etc:/etc/postgresql    -v /opt/ntipa/postgres/log:/var/log/postgresql     -v /opt/ntipa/postgres/data:/var/lib/postgresq   tornabene/docker-postgres 
-    
-    
-     
+    sudo mkdir -p /opt/ntipa/postgresql_data
+    sudo docker run --name postgres.ntipa.it -p 5432:5432 -p 9922:22 -v  /opt/ntipa/postgresql_data:/var/lib/postgresql   tornabene/docker-postgres 
